@@ -1,19 +1,27 @@
 import { Image, Appear } from '@mdx-deck/components';
 import { Notes } from 'mdx-deck';
 
+import { Flip } from './Flip';
+
 export { dark as theme } from '@mdx-deck/themes';
 
 # Development Environment in the Cloud
 
 <Notes>
+Hi! Today I'm going to talk about my experience with exploring and setting up an development environment in the cloud.
 
-- Playgound project
-- Motivation
-- Approches and constraints
-- Setup
-- Tips and tricks
+- Playground project
 
 </Notes>
+
+---
+
+# Agenda
+
+- Motivation
+- Approaches and constraints
+- Setup
+- Tips and tricks
 
 ---
 
@@ -22,13 +30,32 @@ export { dark as theme } from '@mdx-deck/themes';
 Front-end developer
 @oyvinmar
 
+<Notes>
+
+Who am I?
+
+- Front-end developer
+- Experience with the full stack
+- Passionate about tooling and workflow
+- @oyvinmar on the internet
+
+</Notes>
+
 ---
 
 # Motivation
 
 ---
 
+# Motivation
+
 ## 1. Continue where I left of
+
+---
+
+<h1><Flip>🏃</Flip> → <Flip>🚋</Flip> → 🧸👶🏻 → 👨🏻‍🍳 → 🛌 → 👨🏻‍💻</h1>
+
+<Notes> After work timeline </Notes>
 
 ---
 
@@ -41,26 +68,37 @@ Front-end developer
 
 <Notes>
 
-- @ work
-- Need to leave
+- Status at the end of workday
+- N.B. I prefer not to tavel with a laptop
 
 </Notes>
 
 ---
 
+##
+
 # :office:
 
-<Appear>
+```bash
+git commit -am "wip"
+git push
+```
 
-## git commit -am "wip"; git push
+<Notes>
 
-</Appear>
+Just use Git. Problem solved.
+
+</Notes>
 
 ---
 
 # :house_with_garden:
 
-git pull; git checkout accordion-improvements;
+```bash
+git pull
+git checkout --track accordion-improvements
+yarn start
+```
 
 <Notes>
 
@@ -74,22 +112,22 @@ Easy right?
 
 - Are dependencies up to date?
 - Any new environment variables?
-- Any local dependencies?
+- Does the feature depend on any other services?
 
 ---
 
-## Is devenv up to date?
+## Is development env up to date?
 
-- Buildtools (yarn, npm, maven)
+- Build tools (yarn, npm, maven)
 - Runtime (node, java, python, docker)
-- Devtools (git, terminal, editor, browser)
+- Development tools (git, terminal, editor, browser)
 
 ---
 
 ## I'm always tinkering
 
 - Changing shell exports/aliases
-- Installing new commandline tools
+- Installing new command line tools
 - Changing config
 
 ---
@@ -98,20 +136,16 @@ Easy right?
 
 ---
 
+# MacBook 12inch
+
 ## 1,3 GHz Intel Core m7
 
-:heart: that machine
-
 <Notes>
-  <ul>
-    <li>
-      Works for webdev, but not for heavy tasks (i.e. multiple docker
-      containers)
-    </li>
 
-  </ul>
+- Works for web development, but not for heavy tasks (i.e. multiple docker containers)
+
 </Notes>
 
---
+---
 
 ## On demand scalability
