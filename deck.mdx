@@ -216,7 +216,73 @@ Computer at home
 <Notes>
 
 - Pretty strait forward.
+- Ubuntu with firewall enabled.
 - An alternative to NGINX is SSH port forwarding.
+
+</Notes>
+
+---
+
+# Editing code
+
+<video src="public/coding.mp4" autoPlay loop />
+
+---
+
+## Approaches
+
+- SSH
+- rsync + watchman
+- Nuclide
+- VSCode remote-development extension
+
+---
+
+## Keep it simple, stupid (KISS)
+
+Use ssh and run vim or emacs on the server
+
+<Notes>
+
+- I prefer VSCode
+
+</Notes>
+
+---
+
+## rsync + watchman
+
+<img
+  src="public/rsynclogo.png"
+  style={{
+    padding: '0 2em',
+  }}
+/>
+
+<img
+  src="public/watchman_logo.png"
+  style={{
+    padding: '0 2em',
+  }}
+/>
+
+<Notes>
+
+- Use watchman to watch for local filechanges and use rsync to send them to the server
+
+</Notes>
+
+---
+
+## All tooling must run locally
+
+<Appear>
+  <video src="public/throw_paper.mp4" autoPlay loop />
+</Appear>
+
+<Notes>
+
+For example linting, type checking, compiling etc
 
 </Notes>
 
