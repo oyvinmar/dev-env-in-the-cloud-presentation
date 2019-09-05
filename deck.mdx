@@ -1,5 +1,6 @@
 import { Appear } from '@mdx-deck/components';
-import { Notes, Head } from 'mdx-deck';
+import { Notes, Head, Image } from 'mdx-deck';
+import { Invert, Split } from '@mdx-deck/layouts';
 
 import { Flip } from './Flip';
 
@@ -304,5 +305,80 @@ fontFamily: '"Gotham Rounded A","Gotham Rounded B","Helvetica Neue",Arial,sans-s
 - The Facebook "IDE"
 - Atom with a bunch of plugins
 - Built in remote development support
+
+---
+
+<!--
+<Split>
+<div>
+
+## Atom client
+
+</div>
+<div>
+
+## Nuclide server
+
+</div>
+</Split>
+
+---
+
+-->
+
+# Language Server Protocol (LSP)
+
+<Notes>
+
+- Standardized protocol for how an editor and a language server communicate. The server provides advanced language information.
+
+</Notes>
+
+---
+
+<Invert>
+
+<img src="public/language-server-sequence.png" />
+
+</Invert>
+
+<Notes>
+
+- Example of how communication flows.
+- Server enables features such as autocomplete, goto definition, or documentation on hover.
+
+</Notes>
+
+---
+
+## Digging into Nuclide source
+
+<video src="public/digging.mp4" autoPlay loop />
+
+<Notes>
+
+How complex is this stuff?
+
+</Notes>
+
+---
+
+## Nuclide VSCode extension
+
+Adds remote development capabilities to vscode
+
+<Notes>
+
+- Communicates with a fork of the nuclide server
+
+</Notes>
+
+---
+
+## Nuclide VSCode extension
+
+- File operations
+- CVS communication
+- LSP
 
 ---
