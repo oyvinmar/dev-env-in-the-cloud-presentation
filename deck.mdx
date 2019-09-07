@@ -3,6 +3,7 @@ import { Notes, Head, Image } from 'mdx-deck';
 import { Invert, Split } from '@mdx-deck/layouts';
 
 import { Flip } from './Flip';
+import { GothamHeading } from './GothamHeading';
 
 export { default as theme } from './theme';
 
@@ -278,10 +279,13 @@ Use ssh and run vim or emacs on the server
   }}
 />
 
-<h3 style={{
-  marginTop: 0,
-  fontFamily: '"Gotham Rounded A","Gotham Rounded B","Helvetica Neue",Arial,sans-serif'
-}}>Watchman</h3>
+<GothamHeading
+  style={{
+    marginTop: 0,
+  }}
+>
+  Watchman
+</GothamHeading>
 
 </Split>
 
@@ -308,37 +312,22 @@ Use ssh and run vim or emacs on the server
 
 ---
 
-<h1 style={{
-display: 'flex',
-fontFamily: '"Gotham Rounded A","Gotham Rounded B","Helvetica Neue",Arial,sans-serif',
-}}>
-
-  <img src="/public/nuclide_logo.png" style={{ height: '120px' }} /><span style={{marginLeft: '32px'}}>Nuclide</span>
-</h1>
+<GothamHeading
+  variant="h1"
+  style={{
+    display: 'flex',
+    alignItems: 'center',
+  }}
+>
+  <img src="/public/nuclide_logo.png" style={{ height: '80px' }} />
+  <span style={{ marginLeft: '12px' }}>Nuclide</span>
+</GothamHeading>
 
 - The Facebook "IDE"
 - Atom with a bunch of plugins
 - Built in remote development support
 
 ---
-
-<!--
-<Split>
-<div>
-
-## Atom client
-
-</div>
-<div>
-
-## Nuclide server
-
-</div>
-</Split>
-
----
-
--->
 
 # Language Server Protocol (LSP)
 
@@ -423,9 +412,9 @@ Adds remote development capabilities to vscode
 
 ---
 
-# Visual Studio Code Remote - SSH
+## Visual Studio Code Remote - SSH
 
-Open a remote folder on any remote machine, virtual machine, or container with a running SSH server.
+> Open a remote folder on any remote machine, virtual machine, or container with a running SSH server.
 
 ---
 
