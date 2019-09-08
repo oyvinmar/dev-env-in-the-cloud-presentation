@@ -3,6 +3,7 @@ import { Notes, Head, Image } from 'mdx-deck';
 import { Invert, Split } from '@mdx-deck/layouts';
 
 import { Flip } from './Flip';
+import { Highlight } from './Highlight';
 import { GothamHeading } from './GothamHeading';
 
 export { default as theme } from './theme';
@@ -58,9 +59,13 @@ Who am I?
 
 # Motivation
 
-## \*Continue where I left of
-
-## All that power
+<ul>
+  <Highlight item={0}>
+    <li>Continue where I left of</li>
+    <li>All that power</li>
+    <li>Curiosity</li>
+  </Highlight>
+</ul>
 
 ---
 
@@ -145,11 +150,13 @@ Easy right?
 
 # Motivation
 
-## Continue where I left of
-
-## \*All that power
-
-## Curiosity
+<ul>
+  <Highlight item={1}>
+    <li>Continue where I left of</li>
+    <li>All that power</li>
+    <li>Curiosity</li>
+  </Highlight>
+</ul>
 
 ---
 
@@ -174,7 +181,17 @@ Computer at home
 
 ---
 
-# Curiosity
+# Motivation
+
+<ul>
+  <Highlight item={2}>
+    <li>Continue where I left of</li>
+    <li>All that power</li>
+    <li>Curiosity</li>
+  </Highlight>
+</ul>
+
+---
 
 - Facebook/Google/Microsoft have internal solutions
 - Sandbox your development environment
