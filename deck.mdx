@@ -352,6 +352,30 @@ Use ssh and run vim or emacs on the server
 
 ---
 
+## Language Server Protocol (LSP)
+
+Builtin: VSCode, Atom, Eclipse Che
+Plugins: Sublime, vim/neovim, Emacs, etc..
+
+<Notes>
+
+- Standardized protocol for how an editor and a language server communicate. The server provides advanced language information.
+
+</Notes>
+
+---
+
+<img src="public/language-server-sequence.png" />
+
+<Notes>
+
+- Example of how communication flows.
+- Server enables features such as autocomplete, goto definition, or documentation on hover.
+
+</Notes>
+
+---
+
 <GothamHeading
   variant="h1"
   style={{
@@ -366,31 +390,6 @@ Use ssh and run vim or emacs on the server
 - The Facebook "IDE"
 - Atom with a bunch of plugins
 - Built in remote development support
-
----
-
-# Language Server Protocol (LSP)
-
-<Notes>
-
-- Standardized protocol for how an editor and a language server communicate. The server provides advanced language information.
-
-</Notes>
-
----
-
-<Invert>
-
-<img src="public/language-server-sequence.png" />
-
-</Invert>
-
-<Notes>
-
-- Example of how communication flows.
-- Server enables features such as autocomplete, goto definition, or documentation on hover.
-
-</Notes>
 
 ---
 
