@@ -69,6 +69,13 @@ Who am I?
   </Highlight>
 </ul>
 
+<Notes>
+
+- Biggest motivation for me
+- N.B. I prefer not to tavel with a laptop
+
+</Notes>
+
 ---
 
 <h1><Flip>🏃</Flip> → <Flip>🚋</Flip> → 🧸👶🏻 → 👨🏻‍🍳 → 🛌 → 👨🏻‍💻</h1>
@@ -87,7 +94,6 @@ Who am I?
 <Notes>
 
 - Status at the end of workday
-- N.B. I prefer not to tavel with a laptop
 
 </Notes>
 
@@ -180,6 +186,13 @@ Easy right?
 
 <video src="public/scalability.mp4" autoPlay loop />
 
+<Notes>
+
+- Not locked to a physical device
+- Scale CPU/RAM after task
+
+</Notes>
+
 ---
 
 # Motivation
@@ -206,6 +219,7 @@ Easy right?
 <Notes>
 
 - Testing new languages/development tools
+- Separate server for each project
 - Easy project switching (i.e. running docker container)
 
 </Notes>
@@ -218,9 +232,19 @@ Easy right?
 
 ---
 
-## Architecture
+<h2 style={{marginBottom: '-0.5em'}}>Architecture</h2>
 
-<img style={{ width: '100vh' }} src="public/remote-architecture_white.svg" />
+<img style={{ width: '100vw' }} src="public/remote-architecture_white.svg" />
+
+<Notes>
+
+- The server runs a web server
+- The server supports web sockets
+- The browser can easily be replaced by a REST-client
+- The client/editor edits files securely through ssh
+- An alternative to a web server is SSH port forwarding.
+
+</Notes>
 
 ---
 
@@ -246,8 +270,9 @@ Easy right?
 
 <Notes>
 
-- Pretty strait forward.
+- Standard web server setup.
 - Ubuntu with firewall enabled.
+- Web sockets enabled in NGINX
 - An alternative to NGINX is SSH port forwarding.
 
 </Notes>
@@ -257,6 +282,12 @@ Easy right?
 # Editing code
 
 <video src="public/coding.mp4" autoPlay loop />
+
+<Notes>
+
+Server setup was pretty straightforward, but how to edit the code from remote was the hard part.
+
+</Notes>
 
 ---
 
@@ -344,6 +375,7 @@ Plugins: Sublime, vim/neovim, Emacs, etc..
 
 <Notes>
 
+- Warning: Minor digression. But this is what enables the next two approaches I will describe
 - Standardized protocol for how an editor and a language server communicate. The server provides advanced language information.
 
 </Notes>
@@ -376,6 +408,12 @@ Plugins: Sublime, vim/neovim, Emacs, etc..
 - Atom with a bunch of plugins
 - Built in remote development support
 
+<Notes>
+
+- Next approach
+
+</Notes>
+
 ---
 
 ## Digging into Nuclide source
@@ -384,7 +422,7 @@ Plugins: Sublime, vim/neovim, Emacs, etc..
 
 <Notes>
 
-How complex is this stuff?
+How is this stuff implemented?
 
 </Notes>
 
@@ -392,7 +430,11 @@ How complex is this stuff?
 
 ## Nuclide VSCode extension
 
-Adds remote development capabilities to vscode
+<Appear>
+
+Adds remote development capabilities to vscode 🤠
+
+</Appear>
 
 <Notes>
 
@@ -411,7 +453,8 @@ Adds remote development capabilities to vscode
 
 <Notes>
 
-- Written in javascript
+- Automatically install a server on the host
+- Written in javascript with flow types
 
 </Notes>
 
@@ -442,12 +485,21 @@ Adds remote development capabilities to vscode
 
 ---
 
-# Can use all VSCode features
+## Can use all VSCode features
 
-- UI Extensions run locally (snippets, keymaps, etc)
-- Workspace extensions remotely (completions, linter, formatter)
-- Debugging on the SSH host
-- Forward port from host
+- UI Extensions run locally 🏡
+- Workspace extensions remotely 🏢
+- Debugging on the SSH host 🐛
+- Forward port from host 🚀
+
+<Notes>
+
+- UI (snippets, keymaps vim/emacs, themes)
+- Workspace (completion, linters, formatter)
+- Debug
+- SSH port forwarding
+
+</Notes>
 
 ---
 
@@ -459,30 +511,23 @@ Adds remote development capabilities to vscode
 
 # Minor issues
 
-- SSH connection hangs sometimes (waking up from sleep)
+- SSH connection hangs sometimes
 - Slower assets download
+- Not open source
 - Does not solve config
+
+<Notes>
+
+- When waking from sleep. Not explored in depth.
+- Big js bundles with embedded source maps can be an issue (10 mb). Hot-module reloading mitigates the issue
+- Microsoft Azure bundling?
+- Actually exacerbate the need for automating config
+
+</Notes>
 
 ---
 
 # Tips and tricks
-
----
-
-# Dotfiles
-
-<video
-  src="public/dotfiles_init.mp4"
-  autoPlay
-  loop
-  style={{ maxWidth: '70%' }}
-/>
-
----
-
-### Use tmux
-
-<img src="public/tmux.png" style={{ maxWidth: '70%' }} />
 
 ---
 
@@ -495,6 +540,41 @@ Adds remote development capabilities to vscode
 
 ---
 
+### Keep config in dotfiles
+
+<video
+  src="public/dotfiles_init.mp4"
+  autoPlay
+  loop
+  style={{ maxWidth: '70%' }}
+/>
+
+<Notes>
+
+- Link config/dotfiles (shell, vim, ssh, tmux).
+- Install the tools I most commonly use.
+- Can re-execute the command at any time to synchronize anything that might have changed.
+
+</Notes>
+
+---
+
+### Use tmux
+
+<img src="public/tmux.png" style={{ maxWidth: '70%' }} />
+
+<Notes>
+
+- Why haven't I used this before??
+- Terminal multiplexer (what the hell does that mean?)
+- Basically a window manger inside your terminal
+- Sessions is the thing that makes it invaluable for remote development
+- Can exit/detach from a session (i.e. disconnect from the server) and tmux keeps the session alive
+
+</Notes>
+
+---
+
 # Unexplored benefits
 
 - Develop in the production/test environment
@@ -504,9 +584,10 @@ Adds remote development capabilities to vscode
 
 <Notes>
 
-- Facebook/Google/Microsoft have internal solutions.
+- Test code in the real environment. Low latency other service. Easier project setup?
 - Automating project development setup
-- Good bye MacBook
+- No sensitive info on computer
+- See CodeServer. Develop with VSCode in the browser
 
 </Notes>
 
@@ -529,6 +610,14 @@ Adds remote development capabilities to vscode
 <img src="public/tweet_setup.png" style={{ maxWidth: '80%' }} />
 
 </Split>
+
+<Notes>
+
+- Not mainstream, but getting there.
+- Looking for buzz (and seeing it)
+- Facebook and Google have done this for years
+
+</Notes>
 
 ---
 
