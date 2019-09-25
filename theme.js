@@ -19,4 +19,8 @@ export default {
       fontSize: '40px',
     },
   },
+  a: {
+    color: 'white',
+    display: 'block',
+  },
 };
