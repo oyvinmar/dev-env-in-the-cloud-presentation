@@ -9,6 +9,7 @@
   "scripts": {
     "format-check": "prettier --l \"**\"",
     "format": "prettier --write \"**\"",
+    "build": "mdx-deck build deck.mdx && cp -r public dist",
     "start": "mdx-deck deck.mdx"
   },
   "devDependencies": {
