@@ -9,9 +9,9 @@ import {
 } from 'mdx-deck';
 
 import { Flip } from './Flip';
+import { AlignLeft } from './AlignLeft';
 import { Highlight } from './Highlight';
 import { GothamHeading } from './GothamHeading';
-import { dark } from '@mdx-deck/themes';
 import theme from './theme';
 import {
   git_status,
@@ -38,7 +38,7 @@ import {
 } from './assets';
 import './assets/fonts.css';
 
-export const themes = [dark, theme];
+export const themes = [theme];
 
 <Head>
   <title>Developing in the cloud</title>
@@ -57,7 +57,7 @@ Hi! Today I'm going to talk about my experience with exploring and setting up an
 
 ---
 
-# Agenda
+## Agenda
 
 - Motivation
 - Setup
@@ -173,11 +173,11 @@ Easy right?
 
 ---
 
-## Is development env up to date?
+## Is environment up to date?
 
 - Build tools (yarn, npm, maven)
 - Runtime (node, java, python, docker)
-- Development tools (git, terminal, editor, browser)
+- Development tools (git, terminal, browser)
 
 ---
 
@@ -281,7 +281,7 @@ Easy right?
 
 ---
 
-<img src={digital_ocean_logo} />
+<img src={digital_ocean_logo} style={{ marginBottom: '40px' }} />
 
 <Appear>
 
@@ -312,7 +312,7 @@ Easy right?
 
 ---
 
-# Editing code
+## Editing code
 
 <video src={coding} autoPlay loop />
 
@@ -400,11 +400,15 @@ Use ssh and run vim or emacs on the server
 
 ---
 
+<AlignLeft>
+
 ## Language Server Protocol (LSP)
 
 Builtin: VSCode, Atom, Eclipse Che
 
 Plugins: Sublime, vim/neovim, Emacs, etc..
+
+</AlignLeft>
 
 <Notes>
 
@@ -426,6 +430,8 @@ Plugins: Sublime, vim/neovim, Emacs, etc..
 
 ---
 
+<div>
+
 <GothamHeading
   variant="h1"
   style={{
@@ -440,6 +446,8 @@ Plugins: Sublime, vim/neovim, Emacs, etc..
 - The Facebook "IDE"
 - Atom with a bunch of plugins
 - Built in remote development support
+
+</div>
 
 <Notes>
 
@@ -465,7 +473,7 @@ How is this stuff implemented?
 
 <Appear>
 
-Adds remote development capabilities to vscode 🤠
+> Adds remote development capabilities to vscode 🤠
 
 </Appear>
 
@@ -499,7 +507,7 @@ Adds remote development capabilities to vscode 🤠
 
 ---
 
-## Nuclide VSCode extension
+## Nuclide VS Code extension
 
 - Secure bidirectional channel ✅
 - File operations ✅
@@ -512,7 +520,7 @@ Adds remote development capabilities to vscode 🤠
 
 ---
 
-## Visual Studio Code Remote - SSH
+## VSCode Remote - SSH
 
 > Open a remote folder on any remote machine, virtual machine, or container with a running SSH server.
 
@@ -542,7 +550,7 @@ Adds remote development capabilities to vscode 🤠
 
 ---
 
-# Minor issues
+## Minor issues
 
 - SSH connection hangs sometimes
 - Slower assets download
@@ -564,7 +572,7 @@ Adds remote development capabilities to vscode 🤠
 
 ---
 
-### Become familiar with the command line
+## Master the command line
 
 - Learn SSH and SCP
 - Master a terminal editor (vim, emacs, nano)
@@ -573,7 +581,7 @@ Adds remote development capabilities to vscode 🤠
 
 ---
 
-### Keep config in dotfiles
+## Keep config in dotfiles
 
 <video src={dotfiles_init} autoPlay loop style={{ maxWidth: '70%' }} />
 
@@ -587,7 +595,7 @@ Adds remote development capabilities to vscode 🤠
 
 ---
 
-### Use tmux
+## Use tmux
 
 <img src={tmux} style={{ maxWidth: '70%' }} />
 
@@ -603,7 +611,7 @@ Adds remote development capabilities to vscode 🤠
 
 ---
 
-# Unexplored benefits
+## Unexplored benefits
 
 - Develop in the production/test environment
 - Great for onboarding?
