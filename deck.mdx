@@ -1,12 +1,44 @@
-import { Appear } from '@mdx-deck/components';
-import { Notes, Head, Image } from 'mdx-deck';
-import { Invert, Split, Horizontal } from '@mdx-deck/layouts';
+import {
+  Notes,
+  Head,
+  Image,
+  Invert,
+  Split,
+  Horizontal,
+  Appear,
+} from 'mdx-deck';
 
 import { Flip } from './Flip';
 import { Highlight } from './Highlight';
 import { GothamHeading } from './GothamHeading';
+import { dark } from '@mdx-deck/themes';
+import theme from './theme';
+import {
+  git_status,
+  digital_ocean_logo,
+  introducing_remote,
+  language_server_sequence,
+  nuclide_logo,
+  remote_architecture_white,
+  rsync_logo,
+  sandbox,
+  tmux,
+  tweet_blown,
+  tweet_changes_everything,
+  tweet_setup,
+  tweet_tablet,
+  watchman_logo,
+  digging,
+  scalability,
+  nope,
+  dotfiles_init,
+  hacking,
+  coding,
+  throw_paper,
+} from './public';
+import './public/fonts.css';
 
-export { default as theme } from './theme';
+export const themes = [dark, theme];
 
 <Head>
   <title>Developing in the cloud</title>
@@ -85,8 +117,9 @@ Who am I?
 ---
 
 <img
-  src="public/git_status.png"
+  src={git_status}
   style={{
+    objectFit: 'contain',
     padding: '0 2em',
   }}
 />
@@ -184,7 +217,7 @@ Easy right?
 
 ## On demand scalability
 
-<video src="public/scalability.mp4" autoPlay loop />
+<video src={scalability} autoPlay loop />
 
 <Notes>
 
@@ -210,7 +243,7 @@ Easy right?
 ### Sandbox the development environment
 
 <img
-  src="public/sandbox.jpg"
+  src={sandbox}
   style={{
     maxWidth: '70%',
   }}
@@ -234,7 +267,7 @@ Easy right?
 
 <h2 style={{marginBottom: '-0.5em'}}>Architecture</h2>
 
-<img style={{ width: '100vw' }} src="public/remote-architecture_white.svg" />
+<img style={{ width: '100vw' }} src={remote_architecture_white} />
 
 <Notes>
 
@@ -248,7 +281,7 @@ Easy right?
 
 ---
 
-<img src="public/DO_Logo_Horizontal_Blue.png" />
+<img src={digital_ocean_logo} />
 
 <Appear>
 
@@ -281,7 +314,7 @@ Easy right?
 
 # Editing code
 
-<video src="public/coding.mp4" autoPlay loop />
+<video src={coding} autoPlay loop />
 
 <Notes>
 
@@ -306,7 +339,7 @@ Use ssh and run vim or emacs on the server
 
 ---
 
-<video src="/public/nope.mp4" autoPlay loop />
+<video src={nope} autoPlay loop />
 
 <Notes>
 
@@ -321,14 +354,14 @@ Use ssh and run vim or emacs on the server
 <Split>
 
 <img
-  src="public/rsync_logo.png"
+  src={rsync_logo}
   style={{
     maxWidth: '250px',
   }}
 />
 
 <img
-  src="public/watchman_logo.png"
+  src={watchman_logo}
   style={{
     maxWidth: '250px',
   }}
@@ -355,7 +388,7 @@ Use ssh and run vim or emacs on the server
 ## All tooling must run locally
 
 <Appear>
-  <video src="public/throw_paper.mp4" autoPlay loop />
+  <video src={throw_paper} autoPlay loop />
 </Appear>
 
 <Notes>
@@ -382,7 +415,7 @@ Plugins: Sublime, vim/neovim, Emacs, etc..
 
 ---
 
-<img src="public/language-server-sequence.png" />
+<img src={language_server_sequence} />
 
 <Notes>
 
@@ -400,7 +433,7 @@ Plugins: Sublime, vim/neovim, Emacs, etc..
     alignItems: 'center',
   }}
 >
-  <img src="/public/nuclide_logo.png" style={{ height: '80px' }} />
+  <img src={nuclide_logo} style={{ height: '80px' }} />
   <span style={{ marginLeft: '12px' }}>Nuclide</span>
 </GothamHeading>
 
@@ -418,7 +451,7 @@ Plugins: Sublime, vim/neovim, Emacs, etc..
 
 ## Digging into Nuclide source
 
-<video src="public/digging.mp4" autoPlay loop />
+<video src={digging} autoPlay loop />
 
 <Notes>
 
@@ -462,7 +495,7 @@ Adds remote development capabilities to vscode 🤠
 
 ## I can hack this
 
-<video src="public/hacking.mp4" autoPlay loop />
+<video src={hacking} autoPlay loop />
 
 ---
 
@@ -475,7 +508,7 @@ Adds remote development capabilities to vscode 🤠
 
 ---
 
-<img src="/public/introducing_remote.png" style={{ maxWidth: '80%' }} />
+<img src={introducing_remote} style={{ maxWidth: '80%' }} />
 
 ---
 
@@ -542,12 +575,7 @@ Adds remote development capabilities to vscode 🤠
 
 ### Keep config in dotfiles
 
-<video
-  src="public/dotfiles_init.mp4"
-  autoPlay
-  loop
-  style={{ maxWidth: '70%' }}
-/>
+<video src={dotfiles_init} autoPlay loop style={{ maxWidth: '70%' }} />
 
 <Notes>
 
@@ -561,7 +589,7 @@ Adds remote development capabilities to vscode 🤠
 
 ### Use tmux
 
-<img src="public/tmux.png" style={{ maxWidth: '70%' }} />
+<img src={tmux} style={{ maxWidth: '70%' }} />
 
 <Notes>
 
@@ -599,15 +627,15 @@ Adds remote development capabilities to vscode 🤠
 
 <div>
 
-<img src="public/tweet_blown.png" style={{ maxWidth: '80%' }} />
+<img src={tweet_blown} style={{ maxWidth: '80%' }} />
 
-<img src="public/tweet_tablet.png" style={{ maxWidth: '80%' }} />
+<img src={tweet_tablet} style={{ maxWidth: '80%' }} />
 
 </div>
 
-<img src="public/tweet_changes_everything.png" style={{ maxWidth: '80%' }} />
+<img src={tweet_changes_everything} style={{ maxWidth: '80%' }} />
 
-<img src="public/tweet_setup.png" style={{ maxWidth: '80%' }} />
+<img src={tweet_setup} style={{ maxWidth: '80%' }} />
 
 </Split>
 

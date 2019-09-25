@@ -9,10 +9,11 @@
   "scripts": {
     "format-check": "prettier --l \"**\"",
     "format": "prettier --write \"**\"",
+    "build": "mdx-deck build deck.mdx",
     "start": "mdx-deck deck.mdx"
   },
   "devDependencies": {
-    "mdx-deck": "^2.3.2",
+    "mdx-deck": "^3.0.13",
     "prettier": "^1.18.2"
   }
 }

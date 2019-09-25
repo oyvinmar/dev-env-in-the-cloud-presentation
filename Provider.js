@@ -4,7 +4,9 @@ import React from 'react';
 export default props => {
   return (
     <>
-      <link rel="stylesheet" href="/public/fonts.css" />
+      <Head>
+        <link rel="stylesheet" href="/public/fonts.css" />
+      </Head>
       {props.children}
     </>
   );
