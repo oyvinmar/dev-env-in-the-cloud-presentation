@@ -11,7 +11,7 @@ $ yarn
 ### Run development server
 
 ```
-$ yarn start
+$ yarn dev
 ```
 
 ### Test
